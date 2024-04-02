@@ -4,6 +4,11 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * 手动实现ArrayList数组
+ * @author wangyi
+ * @param <E>
+ */
 public class MyArrayList<E> implements Iterable<E> {
     // 真正存储数据的底层数组
     private E[] data;

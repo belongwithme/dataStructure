@@ -6,6 +6,11 @@ package com.wang.collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * 手动实现单链表
+ * @author wangyi
+ * @param <E>
+ */
 public class MySingleLinkedList<E> implements Iterable<E> {
     // 虚拟头尾节点
     final private Node<E> head,tail;
