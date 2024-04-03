@@ -114,7 +114,7 @@ public class MyArrayDeque<E> {
             last--;
         }
         E removeValue = data[last];
-        data[last] = null
+        data[last] = null;
         size--;
         return removeValue;
     }
@@ -133,7 +133,7 @@ public class MyArrayDeque<E> {
             throw new NoSuchElementException();
         }
         if(last ==0){
-            return data[data.length-1]
+            return data[data.length-1];
         }
         return data[last -1];
     }
