@@ -1,5 +1,7 @@
 package com.wang.collection;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 public class MyListMap<K,V> {
@@ -14,6 +16,7 @@ public class MyListMap<K,V> {
         this.size = 0;
 
     }
+
 
 
     //单链表节点
@@ -114,4 +117,14 @@ public class MyListMap<K,V> {
         return getNode(key)!=null;
     }
 
+
+    public List<Map.Entry<K,V>> entries() {
+        LinkedList<Map.Entry<K,V>> entryList = new LinkedList<>();
+        Node<K, V> p = head.next;
+        while(p!= tail){
+            entryList.addLast(p);
+            p = p.next;
+        }
+        return entryList;
+    }
 }
