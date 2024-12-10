@@ -3,6 +3,9 @@ package graph.traverseGraph;
 import graph.Graph;
 import graph.simpleGraph;
 
+import java.util.LinkedList;
+import java.util.List;
+
 
 /**
  * @description: TODO
@@ -45,6 +48,32 @@ public class traverseDFS {
         //后序位置
     }
 
+    //使用OnPath数组
+    boolean[] onPath = new boolean[new simpleGraph().size()];
+    List<Integer> path = new LinkedList<>();
+
+    void traverse(Graph graph,int src,int dest){
+        if(src<0||src>= graph.size()){
+            return;
+        }
+        //防止死循环
+        if(onPath[src]){
+            return;
+        }
+        //前序位置
+        onPath[src] = true;
+        path.add(src);
+        if(src == dest){
+            System.out.println("find path:"+path);
+        }
+        for(simpleGraph.Edge e:graph.neighbors(src)){
+            traverse(graph,e.to,dest);
+        }
+        //
+        path.remove(path.size()-1);
+        onPath[src] = false;
+
+    }
 
 }
 

@@ -24,4 +24,8 @@ public class simpleGraph {
     List<Edge>[] graph;
     //临接矩阵
     int[][] matrix;
+
+    public int size(){
+        return this.graph.length;
+    }
 }
