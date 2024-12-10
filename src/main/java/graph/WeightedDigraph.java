@@ -40,33 +40,37 @@ public class WeightedDigraph {
             this.weight = weight;
         }
     }
+
     //邻接表,graph[v] 存储节点v的所有邻居节点及其对应权重
     private List<Edge>[] graph;
 
     public WeightedDigraph(int n) {
         //初始化
         graph = new ArrayList[n];
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             graph[i] = new ArrayList<>();
         }
     }
+
     // 增，添加一条带权重的有向边，复杂度 O(1)
-    public void addEdge(int from,int to,int weight){
-        graph[from].add(new Edge(to,weight));
+    public void addEdge(int from, int to, int weight) {
+        graph[from].add(new Edge(to, weight));
     }
+
     //删,删除一条有向边,复杂度O(v)
-    public void removeEdge(int from,int to){
-        for(int i=0;i<graph[from].size();i++){
-            if(graph[from].get(i).to==to){
+    public void removeEdge(int from, int to) {
+        for (int i = 0; i < graph[from].size(); i++) {
+            if (graph[from].get(i).to == to) {
                 graph[from].remove(i);
                 break;
             }
         }
     }
+
     // 查，判断两个节点是否相邻，复杂度 O(V)
-    public boolean hasEdge(int from,int to){
-        for(Edge e: graph[from]){
-            if(e.to==to){
+    public boolean hasEdge(int from, int to) {
+        for (Edge e : graph[from]) {
+            if (e.to == to) {
                 return true;
             }
         }
@@ -74,9 +78,9 @@ public class WeightedDigraph {
     }
 
     // 查，返回一条边的权重，复杂度 O(V)
-    public int weight(int from,int to){
-        for(Edge e: graph[from]){
-            if(e.to==to){
+    public int weight(int from, int to) {
+        for (Edge e : graph[from]) {
+            if (e.to == to) {
                 return e.weight;
             }
         }

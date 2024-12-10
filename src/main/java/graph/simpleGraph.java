@@ -10,15 +10,16 @@ import java.util.List;
 
 public class simpleGraph {
     //图节点的逻辑结构
-    class Vertex{
-        int id;
-        Vertex[] neighbors;
+    public class Vertex {
+        public int id;
+        public Vertex[] neighbors;
     }
 
-    class Edge{
-        int to;
-        int weight;
+    public class Edge {
+        public int to;
+        public int weight;
     }
+
     //邻接表
     List<Edge>[] graph;
     //临接矩阵
