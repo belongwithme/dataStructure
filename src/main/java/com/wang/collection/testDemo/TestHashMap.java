@@ -1,4 +1,4 @@
-package com.wang.collection.test;
+package com.wang.collection.testDemo;
 
 import java.util.HashMap;
 
