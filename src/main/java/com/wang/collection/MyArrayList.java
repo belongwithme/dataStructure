@@ -186,13 +186,14 @@ public class MyArrayList<E> implements Iterable<E> {
             public E next() {
                 return data[p++];
             }
+
+            @Override
+            public void remove() {
+
+            }
         };
     }
 
-    private void display() {
-        System.out.println("size = " + size + " cap = " + data.length);
-        System.out.println(Arrays.toString(data));
-    }
 
 
     public static void main(String[] args) {

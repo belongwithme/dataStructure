@@ -267,6 +267,11 @@ public class MyLinkedList<E> implements Iterable<E> {
                 p = p.next;
                 return val;
             }
+
+            @Override
+            public void remove() {
+
+            }
         };
     }
 }
